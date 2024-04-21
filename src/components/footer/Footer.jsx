@@ -69,7 +69,7 @@ const Footer = () => {
         <div className="bottom">
           <div className="left">
             <h2>
-              <Link to="/">fiverr</Link>
+              <Link to="/">Liver</Link>
             </h2>
             <span>Made By Ahmed Fayez</span>
           </div>
