@@ -99,7 +99,7 @@ const Add = () => {
                   type="file"
                   multiple
                   className="file"
-                  name="images"
+                  name="imgs"
                   onChange={(e) => setFiles(e.target.files)}
                 />
                 <button onClick={handleUpload}>

@@ -3,7 +3,7 @@ export const INITIAL_STATE = {
   title: "",
   cat: "",
   cover: "",
-  images: [],
+  imgs: [],
   desc: "",
   shortTitle: "",
   shortDesc: "",
