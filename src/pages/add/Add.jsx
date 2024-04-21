@@ -103,7 +103,7 @@ const Add = () => {
                   onChange={(e) => setFiles(e.target.files)}
                 />
                 <button onClick={handleUpload}>
-                  {uploading ? "loading" : "Upload"}
+                  {uploading ? "loading..." : "Upload"}
                 </button>
               </div>
             </div>
