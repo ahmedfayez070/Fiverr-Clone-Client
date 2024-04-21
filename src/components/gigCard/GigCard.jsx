@@ -25,7 +25,7 @@ const GigCard = ({ card }) => {
             <img src={data.img || "/assets/noavatar.jpg"} alt={data.username} />
             <span>{data.username}</span>
           </div>
-          <p>{card.desc}</p>
+          <p>{card.shortDesc}</p>
           {!isNaN(Math.round(card.totalStars / card.starNumber)) && (
             <div className="star">
               {Array(Math.round(data.totalStars / data.starNumber))
