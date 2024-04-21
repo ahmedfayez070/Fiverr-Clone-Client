@@ -1,0 +1,110 @@
+@import "../../styles.scss";
+
+.landing {
+  background-color: $dark-green;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+
+  @include mobile {
+    padding: 30px 0;
+  }
+
+  .container {
+    display: flex;
+    align-items: center;
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+
+      h1 {
+        font-size: 34px;
+
+        span {
+          font-style: italic;
+        }
+      }
+
+      .search {
+        display: flex;
+
+        .search-input {
+          height: 50px;
+          flex: 1;
+          position: relative;
+
+          img {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            top: 15px;
+            left: 10px;
+          }
+
+          input {
+            background-color: #fff;
+            padding: 10px 10px 10px 40px;
+            color: gray;
+            border-radius: 5px 0 0 5px;
+            height: 100%;
+            width: 100%;
+            border: none;
+          }
+        }
+
+        button {
+          color: #fff;
+          background-color: $light-green;
+          padding: 10px 30px;
+          border: none;
+          border-radius: 0 5px 5px 0;
+          height: 50px;
+          cursor: pointer;
+        }
+      }
+
+      .popular {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        @include mobile {
+          flex-wrap: wrap;
+        }
+
+        button {
+          border: 1px solid #fff;
+          border-radius: 15px;
+          color: #fff;
+          background-color: transparent;
+          padding: 5px 10px;
+          cursor: pointer;
+
+          @include mobile {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    .img {
+      flex: 1;
+      height: 500px;
+      width: 100%;
+
+      @include mobile {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

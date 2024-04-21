@@ -1,0 +1,49 @@
+@import "../../styles.scss";
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding-top: 30px;
+
+    h1 {
+      font-size: 30px;
+      color: gray;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      min-width: 300px;
+      gap: 20px;
+
+      label {
+        color: #555;
+      }
+
+      input {
+        border: 1px solid lightgray;
+        height: 40px;
+        padding: 10px;
+        border-radius: 5px;
+        color: gray;
+      }
+
+      button {
+        background-color: $light-green;
+        border: none;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    }
+  }
+}

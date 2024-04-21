@@ -1,0 +1,102 @@
+@import "../../styles.scss";
+
+.footer {
+  display: flex;
+  justify-content: center;
+  color: #666;
+  margin: 50px 0px;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .container {
+    .top {
+      display: flex;
+      justify-content: space-between;
+
+      @include mobile {
+        display: none;
+      }
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h2 {
+          font-size: 16px;
+          color: #555;
+
+          @include tablet {
+            font-size: 14px;
+          }
+        }
+
+        span {
+          font-weight: 300;
+
+          @include tablet {
+            font-size: 14px;
+          }
+        }
+      }
+    }
+
+    hr {
+      margin: 50px 0px;
+      height: 0;
+      border: 1px solid #ebe9e9;
+
+      @include mobile {
+        display: none;
+      }
+    }
+
+    .bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      @include mobile {
+        display: block;
+      }
+
+      .left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        @include mobile {
+          justify-content: space-between;
+        }
+
+        span {
+          font-size: 12px;
+        }
+      }
+
+      .right {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        @include mobile {
+          display: none;
+        }
+
+        .social {
+          display: flex;
+          gap: 20px;
+        }
+
+        .link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+}

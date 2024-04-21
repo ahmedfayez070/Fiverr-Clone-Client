@@ -1,0 +1,67 @@
+@import "../../styles.scss";
+
+.my-gigs {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      h1 {
+        font-size: 30px;
+      }
+
+      button {
+        background-color: $light-green;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        cursor: pointer;
+      }
+    }
+
+    table {
+      width: 100%;
+
+      tr {
+        font-size: 14px;
+        text-align: left;
+        height: 50px;
+
+        @include mobile {
+          height: 85px;
+        }
+
+        &:nth-of-type(even) {
+          background-color: #1dbf730f;
+        }
+
+        td {
+          color: #555;
+
+          .img {
+            width: 50px;
+            height: 25px;
+            object-fit: cover;
+          }
+
+          .delete {
+            width: 20px;
+            height: 20px;
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}

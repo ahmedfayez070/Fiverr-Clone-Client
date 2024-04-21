@@ -1,0 +1,95 @@
+@import "../../styles.scss";
+
+.gig-card {
+  width: 250px;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(240, 237, 237);
+
+  img {
+    width: 100%;
+    height: 60%;
+    object-fit: cover;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid rgb(240, 237, 237);
+
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 30px;
+        height: 30px;
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
+    }
+
+    p {
+      font-size: 14px;
+      font-weight: 400;
+      color: #555;
+    }
+
+    .star {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      img {
+        width: 14px;
+        height: 14px;
+        object-fit: cover;
+      }
+
+      span {
+        color: $star-yellow;
+        font-size: 14px;
+      }
+    }
+  }
+
+  .details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    img {
+      width: 16px;
+      height: 16px;
+      object-fit: cover;
+    }
+
+    .price {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+
+      span {
+        font-size: 12px;
+        color: #999;
+      }
+
+      h5 {
+        font-size: 18px;
+        color: #555;
+        font-weight: 400;
+      }
+    }
+  }
+}
