@@ -1,8 +1,4 @@
-import {
-  QueryClient,
-  useMutation,
-  useQueryClient,
-} from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import "./add.scss";
 import makeRequest from "../../axios";
 import { useNavigate } from "react-router-dom";
@@ -82,8 +78,8 @@ const Add = () => {
               placeholder="e.g. I will do something I'm really good at"
               onChange={handleChange}
             />
-            <label htmlFor="">Category</label>
-            <select name="cats" id="cats" onChange={handleChange}>
+            <label htmlFor="cat">Category</label>
+            <select name="cat" id="cat" onChange={handleChange}>
               <option value="design">Design</option>
               <option value="web">Web Development</option>
               <option value="animation">Animation</option>
