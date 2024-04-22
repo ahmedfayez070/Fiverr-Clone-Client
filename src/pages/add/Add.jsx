@@ -46,7 +46,7 @@ const Add = () => {
     setUploading(true);
     try {
       const cover = await upload(coverFile);
-      let images = Promise.all(
+      let images = await Promise.all(
         [...files].map(async (file) => {
           const url = await upload(file);
           return url;
