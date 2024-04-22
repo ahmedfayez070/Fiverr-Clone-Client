@@ -46,14 +46,14 @@ const Add = () => {
     setUploading(true);
     try {
       const cover = await upload(coverFile);
-      const imgs = Promise.all(
+      let images = Promise.all(
         [...files].map(async (file) => {
           const url = await upload(file);
           return url;
         })
       );
       setUploading(false);
-      dispatch({ type: "ADD_IMAGES", payload: { cover, imgs } });
+      dispatch({ type: "ADD_IMAGES", payload: { cover, imgs: images } });
     } catch (error) {
       console.log(error);
     }
