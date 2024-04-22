@@ -12,6 +12,8 @@ const Gigs = () => {
 
   const { search } = useLocation();
 
+  const pageTitle = search.split("=")[1];
+
   const { isPending, error, data, refetch } = useQuery({
     queryKey: ["gigs"],
     queryFn: () =>
@@ -37,11 +39,9 @@ const Gigs = () => {
   return (
     <div className="gigs">
       <div className="container">
-        <p>Liver &gt; GRAPHICS &amp; DESIGN &gt;</p>
-        <h1>AI Artists</h1>
-        <p>
-          Explore the boundaries of art and technology with Fiverr's AI artists
-        </p>
+        <p>Liver &gt; {pageTitle}</p>
+        <h1>{pageTitle}</h1>
+        <p>Explore the boundaries of Liver&apos;s {pageTitle}</p>
         <div className="menu">
           <div className="filter">
             <span>Budget</span>
