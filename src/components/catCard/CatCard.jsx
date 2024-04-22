@@ -5,7 +5,7 @@ import "./catCard.scss";
 const CatCard = ({ card }) => {
   return (
     <Link
-      to="/gigs?cat=art"
+      to={"/gigs?cat=" + card.cat}
       style={{
         display: "flex",
         justifyContent: "center",
