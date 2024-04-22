@@ -37,7 +37,7 @@ const Gigs = () => {
   return (
     <div className="gigs">
       <div className="container">
-        <p>FIVERR &gt; GRAPHICS &amp; DESIGN &gt;</p>
+        <p>Liver &gt; GRAPHICS &amp; DESIGN &gt;</p>
         <h1>AI Artists</h1>
         <p>
           Explore the boundaries of art and technology with Fiverr's AI artists
