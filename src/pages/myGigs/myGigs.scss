@@ -48,6 +48,10 @@
         td {
           color: #555;
 
+          @include mobile {
+            text-align: center;
+          }
+
           .img {
             width: 50px;
             height: 25px;

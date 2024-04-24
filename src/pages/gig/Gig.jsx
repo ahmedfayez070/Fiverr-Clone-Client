@@ -136,7 +136,7 @@ function Gig() {
                   <span className="desc">English</span>
                 </div>
               </div>
-              <hr />
+              <hr className="no-mobile" />
               <p>{dataUser.desc}</p>
             </div>
           </div>

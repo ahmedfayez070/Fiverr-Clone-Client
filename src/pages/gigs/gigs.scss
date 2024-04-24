@@ -26,6 +26,7 @@
 
       @include mobile {
         flex-direction: column;
+        gap: 10px;
       }
 
       .filter {
@@ -87,7 +88,6 @@
 
     .cards {
       display: flex;
-      justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;

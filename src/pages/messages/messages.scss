@@ -33,6 +33,10 @@
         td {
           padding: 10px;
 
+          @include mobile {
+            text-align: center;
+          }
+
           &:first-of-type {
             font-weight: 500;
             text-transform: capitalize;
