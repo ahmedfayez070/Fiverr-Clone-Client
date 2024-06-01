@@ -12,22 +12,22 @@ const Orders = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["orders"],
-    queryFn: () =>
-      makeRequest.get(`/orders`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/orders`).then((res) => {
         return res.data;
       }),
   });
 
-  const handleContact = (order) => {
+  const handleContact = async (order) => {
     const sellerId = order.sellerId;
     const buyerId = order.buyerId;
     const id = sellerId + buyerId;
     try {
-      const res = makeRequest.get(`/conversations/single/${id}`);
+      const res = await makeRequest.get(`/conversations/single/${id}`);
       navigate(`/message/${res.data.id}`);
     } catch (error) {
       if (error.response.status === 404) {
-        const res = makeRequest.post(`/conversations`, {
+        const res = await makeRequest.post(`/conversations`, {
           to: currentUser.isSeller ? buyerId : sellerId,
         });
         navigate(`/message/${res.data.id}`);

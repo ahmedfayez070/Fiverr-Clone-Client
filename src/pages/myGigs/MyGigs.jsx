@@ -12,15 +12,15 @@ const MyGigs = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["myGigs"],
-    queryFn: () =>
-      makeRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
         return res.data;
       }),
   });
 
   const mutation = useMutation({
-    mutationFn: (id) => {
-      return makeRequest.delete(`/gigs/${id}`);
+    mutationFn: async (id) => {
+      return await makeRequest.delete(`/gigs/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["myGigs"]);

@@ -5,8 +5,8 @@ import makeRequest from "../../axios";
 const Review = ({ review }) => {
   const { isPending, error, data } = useQuery({
     queryKey: [review.userId],
-    queryFn: () =>
-      makeRequest.get(`/users/${review.userId}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/users/${review.userId}`).then((res) => {
         return res.data;
       }),
   });

@@ -19,8 +19,8 @@ function Gig() {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["gig"],
-    queryFn: () =>
-      makeRequest.get(`/gigs/single/${id}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/gigs/single/${id}`).then((res) => {
         return res.data;
       }),
   });
@@ -33,8 +33,8 @@ function Gig() {
     data: dataUser,
   } = useQuery({
     queryKey: ["user"],
-    queryFn: () =>
-      makeRequest.get(`/users/${userId}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/users/${userId}`).then((res) => {
         return res.data;
       }),
     enabled: !!userId,

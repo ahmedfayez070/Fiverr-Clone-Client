@@ -6,8 +6,8 @@ import "./gigCard.scss";
 const GigCard = ({ card }) => {
   const { isPending, error, data } = useQuery({
     queryKey: [`${card.userId}`],
-    queryFn: () =>
-      makeRequest.get(`/users/${card.userId}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/users/${card.userId}`).then((res) => {
         return res.data;
       }),
   });

@@ -8,15 +8,15 @@ const Reviews = ({ gigId }) => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["reviews"],
-    queryFn: () =>
-      makeRequest.get(`/reviews/${gigId}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/reviews/${gigId}`).then((res) => {
         return res.data;
       }),
   });
 
   const mutation = useMutation({
-    mutationFn: (review) => {
-      return makeRequest.post("/reviews", review);
+    mutationFn: async (review) => {
+      return await makeRequest.post("/reviews", review);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["reviews"]);

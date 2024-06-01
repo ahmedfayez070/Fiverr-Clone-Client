@@ -13,15 +13,15 @@ const Messages = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["conversations"],
-    queryFn: () =>
-      makeRequest.get(`/conversations`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/conversations`).then((res) => {
         return res.data;
       }),
   });
 
   const mutation = useMutation({
-    mutationFn: (id) => {
-      return makeRequest.put(`/conversations/${id}`);
+    mutationFn: async (id) => {
+      return await makeRequest.put(`/conversations/${id}`);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["conversations"]);

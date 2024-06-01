@@ -16,15 +16,15 @@ const Message = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["messages"],
-    queryFn: () =>
-      makeRequest.get(`/messages/${id}`).then((res) => {
+    queryFn: async () =>
+      await makeRequest.get(`/messages/${id}`).then((res) => {
         return res.data;
       }),
   });
 
   const mutation = useMutation({
-    mutationFn: (inputs) => {
-      return makeRequest.post(`/messages`, inputs);
+    mutationFn: async (inputs) => {
+      return await makeRequest.post(`/messages`, inputs);
     },
     onSuccess: () => {
       queryClient.invalidateQueries(["messages"]);
