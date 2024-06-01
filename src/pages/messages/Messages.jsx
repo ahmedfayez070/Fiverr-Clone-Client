@@ -13,8 +13,8 @@ const Messages = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["conversations"],
-    queryFn: async () =>
-      await makeRequest.get(`/conversations`).then((res) => {
+    queryFn: () =>
+      makeRequest.get(`/conversations`).then((res) => {
         return res.data;
       }),
   });

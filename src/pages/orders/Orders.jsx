@@ -12,8 +12,8 @@ const Orders = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["orders"],
-    queryFn: async () =>
-      await makeRequest.get(`/orders`).then((res) => {
+    queryFn: () =>
+      makeRequest.get(`/orders`).then((res) => {
         return res.data;
       }),
   });

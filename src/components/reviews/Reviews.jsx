@@ -8,8 +8,8 @@ const Reviews = ({ gigId }) => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["reviews"],
-    queryFn: async () =>
-      await makeRequest.get(`/reviews/${gigId}`).then((res) => {
+    queryFn: () =>
+      makeRequest.get(`/reviews/${gigId}`).then((res) => {
         return res.data;
       }),
   });

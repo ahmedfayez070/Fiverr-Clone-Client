@@ -12,8 +12,8 @@ const MyGigs = () => {
 
   const { isPending, error, data } = useQuery({
     queryKey: ["myGigs"],
-    queryFn: async () =>
-      await makeRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
+    queryFn: () =>
+      makeRequest.get(`/gigs?userId=${currentUser._id}`).then((res) => {
         return res.data;
       }),
   });

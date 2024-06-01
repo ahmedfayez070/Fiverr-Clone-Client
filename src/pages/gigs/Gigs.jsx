@@ -16,8 +16,8 @@ const Gigs = () => {
 
   const { isPending, error, data, refetch } = useQuery({
     queryKey: ["gigs"],
-    queryFn: async () =>
-      await makeRequest
+    queryFn: () =>
+      makeRequest
         .get(
           `/gigs${search}&min=${
             minRef.current ? minRef.current.value : ""
