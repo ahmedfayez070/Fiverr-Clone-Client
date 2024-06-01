@@ -6,7 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./gig.scss";
 import Reviews from "../../components/reviews/Reviews";
-import BounceLoader from "../../components/bounceLoader/bounceLoader";
+import BounceLoader from "../../components/bounceLoader/BounceLoader";
 
 const responsive = {
   mobile: {
