@@ -54,6 +54,10 @@
       gap: 20px;
       font-weight: 500;
 
+      @include mobile {
+        gap: 10px;
+      }
+
       button {
         font-size: 16px;
         cursor: pointer;

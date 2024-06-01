@@ -1,4 +1,9 @@
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  Navigate,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 import Login from "./pages/login/Login";
@@ -16,6 +21,8 @@ import Success from "./pages/success/Success";
 
 import Navbar from "./components/navbar/Navbar";
 import Footer from "./components/footer/Footer";
+import { useContext } from "react";
+import { AuthContext } from "./context/authContext";
 
 const Layout = () => {
   return (
@@ -27,65 +34,68 @@ const Layout = () => {
   );
 };
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Layout />,
-    children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
-      {
-        path: "/gigs",
-        element: <Gigs />,
-      },
-      {
-        path: "/gig/:id",
-        element: <Gig />,
-      },
-      {
-        path: "/orders",
-        element: <Orders />,
-      },
-      {
-        path: "/my-gigs",
-        element: <MyGigs />,
-      },
-      {
-        path: "/add",
-        element: <Add />,
-      },
-      {
-        path: "/messages",
-        element: <Messages />,
-      },
-      {
-        path: "/message/:id",
-        element: <Message />,
-      },
-      {
-        path: "/login",
-        element: <Login />,
-      },
-      {
-        path: "/register",
-        element: <Register />,
-      },
-      {
-        path: "/pay/:id",
-        element: <Pay />,
-      },
-      {
-        path: "/success",
-        element: <Success />,
-      },
-    ],
-  },
-]);
-
 function App() {
   const queryClient = new QueryClient();
+
+  const { currentUser } = useContext(AuthContext);
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Layout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/gigs",
+          element: <Gigs />,
+        },
+        {
+          path: "/gig/:id",
+          element: <Gig />,
+        },
+        {
+          path: "/orders",
+          element: currentUser ? <Orders /> : <Navigate to="/login" />,
+        },
+        {
+          path: "/my-gigs",
+          element: currentUser ? <MyGigs /> : <Navigate to="/login" />,
+        },
+        {
+          path: "/add",
+          element: currentUser ? <Add /> : <Navigate to="/login" />,
+        },
+        {
+          path: "/messages",
+          element: currentUser ? <Messages /> : <Navigate to="/login" />,
+        },
+        {
+          path: "/message/:id",
+          element: currentUser ? <Message /> : <Navigate to="/login" />,
+        },
+        {
+          path: "/login",
+          element: currentUser ? <Navigate to="/" /> : <Login />,
+        },
+        {
+          path: "/register",
+          element: currentUser ? <Navigate to="/" /> : <Register />,
+        },
+        {
+          path: "/pay/:id",
+          element: currentUser ? <Pay /> : <Navigate to="/login" />,
+        },
+        {
+          path: "/success",
+          element: currentUser ? <Success /> : <Navigate to="/login" />,
+        },
+      ],
+    },
+  ]);
+
   return (
     <div className="app">
       <QueryClientProvider client={queryClient}>
