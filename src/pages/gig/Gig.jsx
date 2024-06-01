@@ -6,6 +6,7 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import "./gig.scss";
 import Reviews from "../../components/reviews/Reviews";
+import BounceLoader from "../../components/bounceLoader/bounceLoader";
 
 const responsive = {
   mobile: {
@@ -43,7 +44,9 @@ function Gig() {
   if (isPending || isPendingUser)
     return (
       <div className="gig">
-        <div className="container">Loading...</div>
+        <div className="container">
+          <BounceLoader />
+        </div>
       </div>
     );
 

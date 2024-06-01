@@ -4,6 +4,7 @@ import { useLocation } from "react-router-dom";
 import makeRequest from "../../axios";
 import GigCard from "../../components/gigCard/GigCard";
 import "./gigs.scss";
+import SkeletonGigCard from "../../components/skeletons/gigCard/GigCard";
 
 const Gigs = () => {
   const [sort, setSort] = useState("price");
@@ -32,7 +33,7 @@ const Gigs = () => {
     refetch();
   }, [sort]);
 
-  if (isPending) return "Loading...";
+  if (isPending) return <SkeletonGigCard />;
 
   if (error) return "An error has occurred: ";
 

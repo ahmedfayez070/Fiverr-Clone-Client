@@ -1,0 +1,74 @@
+@import "../../../styles.scss";
+
+.gig-card-skeleton {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+
+  @include mobile {
+    justify-content: center;
+  }
+
+  .card {
+    width: 250px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 1px solid rgb(240, 237, 237);
+    background-color: #f2f2f2;
+    overflow: hidden;
+    border-radius: 5px;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 100%;
+      background-color: #ededed;
+      transform: skewX(-5deg);
+      animation: bounce 1s 1s ease-in-out infinite;
+    }
+
+    .top {
+      width: 100%;
+      height: 50%;
+      background-color: #e2e2e2;
+    }
+
+    .bottom {
+      padding: 0px 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      .half,
+      .full {
+        width: 50%;
+        height: 20px;
+        border-radius: 5px;
+        background-color: #e2e2e2;
+      }
+
+      .full {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0% {
+    left: -400px;
+  }
+  100% {
+    left: 400px;
+  }
+}
